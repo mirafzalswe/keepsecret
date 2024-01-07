@@ -1,0 +1,95 @@
+{% load  static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/081c4004bc.js" crossorigin="anonymous"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<nav>
+    <div class="navbar">
+        <div class="logo">
+            <h1><i class="fa-solid fa-user-secret"></i>  <a style="text-decoration: none; color: black"  href="{% url 'home-page' %}">Keep<span>Secret </span> </a></h1>
+        </div>
+
+        <div class="search">
+              <form method="GET" action="{% url 'search-page' %}" class="d-flex">
+              <input class="search-bar" name="q" type="text" placeholder="Search" value="{{ query }}">
+              <button style="border-bottom-right-radius: 20px; border-top-right-radius: 20px;"  type="submit"><i style="font-size: 16px; padding:10px; " class="fa fa-search stylesheet"></i></button>
+            </form>
+{#            <input placeholder="Search.." name="search"  class="search-bar" type="text">#}
+        </div>
+        <div class="nav-items">
+            <ul style="list-style-type: none;" class="nav-menu">
+                {% if user.is_authenticated %}
+                    <li class="nav-item" style="margin-top: 8px;"><a href="{% url 'profile-page' %}">Profile</a><i class="fa-solid fa-user"></i></li>
+                    <form method="POST" action="{% url 'logout-page' %}">
+                    {% csrf_token %}
+                    <li class="nav-item"><button style="padding: 8px; border:1px solid rgba(0,0,0,0); border-radius: 20px; background-color: rgba(59,136,136,0); margin-bottom: 10px; margin-left: 10px; font-size: 16px" type="submit" >Logout</button>          <i class="fa-solid fa-right-from-bracket"></i></li>
+                    </form>
+                    <li class="nav-item" style="margin-top: 8px;"><a href="{% url 'create_post-page' %}">Add</a><i class="fa-solid fa-plus"></i></li>
+
+                {% else %}
+                    <li class="nav-item"><a href="{% url 'login-page' %}">Login</a><i class="fa-solid fa-right-to-bracket"></i></li>
+                    <li class="nav-item"><a href="{% url 'register-page' %}">SignUp</a><i class="fa-solid fa-user-plus"></i></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    {% block content %}
+       <div class="container-homec">
+        {% if results %}
+       {% for i in results %}
+        <div class="card-home">
+            <div class="avatar-side">
+                <div class="av">
+                    <img height="40" style="border-radius: 100%;"  src="{{ i.author.profile.user_avatar.url }}" alt="" class="avatar">
+                    <h4><a style="text-decoration: none; color: black" href="{% url 'post-detail' i.id %}">{{ i.author }}</a></h4>
+                </div>
+                <div class="setting"><i class="fa-solid fa-bars"></i></div>
+            </div>
+            <div class="topic">
+                {% for m in i.hashtags.all  %}
+                    <p style="color:blue" class="author">{{ m }}</p>
+                {% endfor %}
+            </div>
+            <div class="content-home">
+                <p class="content">{{ i.content }}</p>
+            </div>
+            <div class="degree">
+                <div class="degree-nav">
+                     <div class="comment">
+                         <a href="" style="font-size: 20px"><i class="fa-regular fa-comments"></i></a>
+                         <p style="font-size: 20px; margin-bottom: 10px;" class="count"> {{ i.comments.count }}</p>
+                     </div>
+                    <div class="like-pt">
+                            <form action="{% url 'like_post' post_id=i.id %}" method="post">
+                               {% csrf_token %}
+                               <button type="submit" class="like-bt" style="margin-bottom: 15px; font-size: 20px; border:1px solid rgba(0, 0, 0, 0)" ><i  class="like-kn fa-regular fa-heart"></i></button>
+                            </form>
+                    <p style="font-size: 20px" class="count">{{ i.likes.count }}</p>
+                    </div>
+                </div>
+                <div class="time-create">
+                    <p style="color:#999;">{{ i.created_at|date }}</p>
+                </div>
+            </div>
+        </div>
+       {% endfor %}
+        {% else %}
+            <h1 style="color:white; text-align: center; margin-top: 40px;">There aren't any posts</h1>
+            <h1 style="text-align: center; margin-top: 10px; color:white;"><a style="color:white" href="{% url 'create_post-page' %}"> Add post </a></h1>
+       {% endif %}
+    </div>
+
+    {% endblock content %}
+
+</body>
+</html>

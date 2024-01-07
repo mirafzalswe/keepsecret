@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div class="loginform">
+        <div class="avatar">
+            <img src="{% static 'default/default1.png' %}" alt="Avatar">
+        </div>
+        <h2>Login</h2>
+        <form action="{% url 'login-page' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" name="login-btn" value="Login">
+            <a href="#">Forgot your password?</a>
+            <a href="{% url 'register-page' %}" class="have-not">Don’t have an account?</a>
+        </form>
+    </div>
+
+{% endblock %}

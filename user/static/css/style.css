@@ -1,0 +1,532 @@
+/* navbar */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #180835;
+  }
+
+.navbar{
+    height: 80px;
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:0 50px
+}
+.nav-menu{
+    display: flex;
+
+}
+
+
+.logo >h1{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 36px;
+}
+
+span{
+    color:rgb(155, 0, 144)
+}
+
+.search-bar{
+    font-size: 16px;
+    /* border-radius: 20px; */
+    padding:9px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.nav-item > a{
+    margin-left: 35px;
+    text-decoration: none;
+    list-style-position: none;
+}
+.nav-item >a{
+    color:rgb(0, 0, 0);
+    font-size: 18px;
+    margin-right: 15px;
+}
+/* navbar end */
+
+/*login page */
+    .loginform {
+        margin-top: 30px;
+    background: #ffffff;
+    width: 450px;
+    color:rebeccapurple;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 29px 0px #e0e0e0;
+}
+.loginform p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.loginform h2 {
+    font-size: 30px;
+    margin: 30px 0px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+}
+.loginform input{
+    width: 100%;
+    margin-bottom: 30px;
+
+}
+.loginform> .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: absolute;
+    top: -55px;
+    left: 0px;
+    right: 0px;
+    border: 6px solid #e6e6e6;
+}
+.avatar img {
+    width: 100%;
+    height: auto;
+}
+.loginform input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #1e5220;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #333;
+    font-size: 16px;
+}
+.loginform input[type="submit"] {
+    background: rebeccapurple;
+    color: #fff;
+    font-size: 20px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    transition: 0.4s;
+    border: none;
+}
+.loginform input[type="submit"]:hover {
+    cursor: pointer;
+    background: #1f5822;
+}
+.loginform a {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    color: #1e5220;
+}
+.loginform .have-not {
+    float: right;
+}
+.loginform a:hover {
+    color: #4a137a;
+}
+
+/*-- Responsive CSS --*/
+@media(max-width: 576px) {
+.loginform {
+    width: 90%;
+}
+.loginform a {
+    display: block;
+    text-align: center;
+    float: inherit !important;
+    margin: 10px 0px;
+}
+}
+
+/*login page end*/
+
+/*signup page*/
+
+    .signform {
+    background: #ffffff;
+    width: 450px;
+    color:rebeccapurple;
+    top: 70%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 22px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 29px 0px #e0e0e0;
+}
+.signform p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.signform h2 {
+    font-size: 25px;
+    margin: 20px 0px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+}
+.signform input{
+    width: 100%;
+    margin-bottom: 30px;
+
+}
+
+
+.signform input[type="text"], input[type="password"],  input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #1e5220;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #333;
+    font-size: 16px;
+}
+.signform input[type="submit"] {
+    background: rebeccapurple;
+    color: #fff;
+    font-size: 20px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    transition: 0.4s;
+    border: none;
+}
+.signform input[type="submit"]:hover {
+    cursor: pointer;
+    background: #1f5822;
+}
+.signform a {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    color: #1e5220;
+}
+.signform .have-not {
+    float: right;
+}
+.signform a:hover {
+    color: #4a137a;
+}
+
+/*-- Responsive CSS --*/
+@media(max-width: 576px) {
+.loginform {
+    width: 90%;
+}
+.signform a {
+    display: block;
+    text-align: center;
+    float: inherit !important;
+    margin: 10px 0px;
+}
+}
+
+.like-bt{
+    border:1px solid rgba(0, 0, 0, 0);
+    margin-left: 6px;
+    background-color: rgba(255, 255, 255, 0);
+}
+/* endsignup */
+
+/* home begin*/
+
+.container-homec{
+    height: 100vh;
+    width: 900px;
+    margin: auto;
+}
+
+.card-home{
+    margin-top: 30px;
+    height: auto;
+    width: 100%;
+    padding:20px;
+    border:1px solid #999;
+
+    background-color: #fffdf8;
+    box-shadow: 0 4px 8px seagreen;
+
+}
+.avatar-side{
+    padding:2px 5px ;
+    height: 46px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.av{
+    display: flex;
+
+}
+.av>h4{
+    margin-top: 10px;
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.av >img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+}
+.topic{
+    margin-top: 5px;
+}
+.content-home{
+    margin-top: 10px;
+}
+
+.degree{
+    /*margin-top: 25px;*/
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.degree-nav{
+    margin-top: 15px;
+    display: flex;
+}
+
+.degree-nav>.like-pt{
+    display: flex;
+    /*margin-top: 10px;*/
+}
+.comment{
+    display: flex;
+}
+.count{
+    margin-left: 5px;
+}
+.like-pt{
+    display: flex;
+}
+
+.degree>a{
+    font-size: 18px;
+    color:rgb(255, 234, 0);
+
+}
+
+/*end home */
+
+/*post detail page*/
+ .post-detail {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .post-content {
+        margin-bottom: 20px;
+    }
+
+    .comments-section {
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+
+    .add-comment textarea {
+        width: calc(100% - 24px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .add-comment button, .like-post button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .add-comment button:hover, .like-post button:hover {
+        background-color: #0056b3;
+    }
+
+    .like-post {
+        margin-top: 20px;
+    }
+
+.container-homec{
+    height: 100vh;
+    width: 900px;
+    margin: auto;
+}
+
+.card-home{
+    margin-top: 30px;
+    height: auto;
+    width: 100%;
+    padding:20px;
+    border:1px solid #999;
+
+    background-color: #fffdf8;
+    box-shadow: 0 4px 8px seagreen;
+
+}
+.avatar-side{
+    padding:2px 5px ;
+    height: 46px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.av{
+    display: flex;
+
+}
+.av>h4{
+    margin-top: 10px;
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.av >img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+}
+.topic{
+    margin-top: 5px;
+}
+.content-home{
+    margin-top: 10px;
+}
+
+.degree{
+    /*margin-top: 25px;*/
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.degree-nav{
+    margin-top: 15px;
+    display: flex;
+}
+
+.degree-nav>.like-pt{
+    display: flex;
+    /*margin-top: 10px;*/
+}
+.comment{
+    display: flex;
+}
+.count{
+    margin-left: 5px;
+}
+.like-pt{
+    display: flex;
+}
+
+.degree>a{
+    font-size: 18px;
+    color:rgb(255, 234, 0);
+
+}
+.comments-page{
+    background-color: #eee9e4;
+    height: auto;
+    /*width: 940px;*/
+
+
+}
+
+.comments-sides{
+ height: auto;
+ padding:20px;
+ /*border-bottom: 1px solid #999;*/
+}
+
+.av-user{
+
+    display: flex;
+
+}
+
+.av-user>img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+    position: relative;
+  /*margin-top: 10px;*/
+}
+
+.comment-user{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.av-user> h4{
+    margin-left: 10px;
+    margin-top: 8px;
+    /*padding-bottom: 10px;*/
+
+}
+.like-kn:active {
+    color: red;
+}
+.like-kn.active {
+    color: red;
+}
+
+.like-bt{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.add-comment{
+    display: flex;
+    width: 100%;
+}
+
+.input-comment{
+    width: 750px;
+    border-radius: 20px;
+    margin-left: 10px;
+    padding:10px;
+    margin-bottom: 50px ;
+}
+
+
+.add-commentbtn{
+    margin-left: 15px;
+    padding:10px;
+    background-color: #fa3863;
+    margin-bottom: 50px;
+    color:white;
+    border-radius: 20px;
+}
+
+.kerak>p{
+    color:white;
+    margin-top: 10px;
+}
+
+
+/*post detail page end */

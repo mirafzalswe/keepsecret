@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    home
+{% endblock title %}
+
+{% block content %}
+
+
+
+       <div class="container-homec">
+        {% if form %}
+       {% for i in form %}
+        <div class="card-home">
+            <div class="avatar-side">
+                <div class="av">
+                    <img height="40" style="border-radius: 100%;"  src="{{ i.author.profile.user_avatar.url }}" alt="" class="avatar">
+                    <h4><a style="text-decoration: none; color: black" href="{% url 'post-detail' i.id %}">{{ i.author }}</a></h4>
+                </div>
+                <div class="setting"><i class="fa-solid fa-bars"></i></div>
+            </div>
+            <div class="topic">
+                {% for m in i.hashtags.all  %}
+                    <a href="hashtags/{{ m }}"><p style="color:blue" class="author">{{ m }}</p></a>
+                {% endfor %}
+            </div>
+            <div class="content-home">
+                <p class="content">{{ i.content }}</p>
+            </div>
+            <div class="degree">
+                <div class="degree-nav">
+                     <div class="comment">
+                         <a href="" style="font-size: 20px"><i class="fa-regular fa-comments"></i></a>
+                         <p style="font-size: 20px; margin-bottom: 10px;" class="count"> {{ i.comments.count }}</p>
+                     </div>
+                    <div class="like-pt">
+                            <form action="{% url 'like_post' post_id=i.id %}" method="post">
+                               {% csrf_token %}
+                               <button type="submit" class="like-bt" style="margin-bottom: 15px; font-size: 20px; border:1px solid rgba(0, 0, 0, 0)" ><i  class="like-kn fa-regular fa-heart"></i></button>
+                            </form>
+                    <p style="font-size: 20px" class="count">{{ i.likes.count }}</p>
+                    </div>
+                </div>
+                <div class="time-create">
+                    <p style="color:#999;">{{ i.created_at|date }}</p>
+                </div>
+            </div>
+        </div>
+       {% endfor %}
+        {% else %}
+            <h1 style="color:white; text-align: center; margin-top: 40px;">There aren't any posts</h1>
+            <h1 style="text-align: center; margin-top: 10px; color:white;"><a style="color:white" href="{% url 'create_post-page' %}"> Add post </a></h1>
+       {% endif %}
+    </div>
+
+
+{% endblock content %}
