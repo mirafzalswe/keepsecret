@@ -7,6 +7,10 @@
 
 ![image](https://github.com/mirafzal114/keepsecret/assets/136591233/21454199-d2e0-430d-bb55-e56738faa7a9)
 
+
+![image](https://github.com/mirafzal114/keepsecret/assets/136591233/989af9f2-59b8-4733-8937-72c2b0af983c)
+
+
 # KeepSecret
 
 KeepSecret is a platform that allows registered users to share posts and questions. Users can publish their content, while others have the ability to like and comment on these posts.
