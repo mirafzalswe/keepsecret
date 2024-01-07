@@ -7,7 +7,38 @@
 
 ![image](https://github.com/mirafzal114/keepsecret/assets/136591233/21454199-d2e0-430d-bb55-e56738faa7a9)
 
+# KeepSecret
 
+KeepSecret is a platform that allows registered users to share posts and questions. Users can publish their content, while others have the ability to like and comment on these posts.
+
+## Features
+
+- **User Authentication:** Register an account to create, like, and comment on posts.
+- **Post Creation:** Registered users can create posts, ask questions, and share information.
+- **Interaction:** Users can like posts and leave comments to engage with the content.
+- **User Profiles:** Each user has a personal profile that can be updated.
+  
+## Technologies Used
+
+- **Python Django:** Backend framework for handling user authentication, posts, and comments.
+- **HTML/CSS:** Frontend development for user interface and design.
+- **SQLite:** Default database for data storage.
+
+## Getting Started
+
+1. **Installation:** Clone the repository and set up a Python environment.
+2. **Dependencies:** Install required dependencies using `pip install -r requirements.txt`.
+3. **Database Setup:** Run database migrations with `python manage.py migrate`.
+4. **Run the Server:** Start the Django development server with `python manage.py runserver`.
+
+## Usage
+
+1. **Register:** Create a new account to access the platform.
+2. **Create Posts:** Authenticated users can create posts or ask questions.
+3. **Interact:** Like posts and leave comments on the content you find interesting.
+4. **Update Profile:** Users can modify and update their profiles.
+
+## Contributors
 
 
 ## Installation and Usage
@@ -30,11 +61,11 @@ This project uses the pipenv tool to manage dependencies and the Python virtual 
 
 1. Clone the repository:
     ```
-    $ git clone https://github.com/mirafzal114/apelsinmarket.git
+    $ git clone https://github.com/mirafzal114/keepsecret.git
     ```
 2. Access the repository:
     ```
-    $ git clone https://github.com/mirafzal114/apelsinmarket.git
+    $ git clone https://github.com/mirafzal114/keepsecret.git
     ```
 
 3. Run the `pipenv install` command to create a virtual environment and install all dependencies from the `Pipfile.lock` file.
@@ -51,7 +82,7 @@ This project uses the pipenv tool to manage dependencies and the Python virtual 
     ```
 - To run scripts or an application from your project, use ``pipenv run``.
 
-  **After you have logged into the `(mandarinshop) mandarinshop` environment, you will have `(mandarinshop) mandarinshop` in this form.
+  **After you have logged into the `(keepsecret) keepsecret` environment, you will have `(keepsecret) keepsecret` in this form.
 
 ```bash
 $ python manage.py makemigrations
@@ -95,11 +126,11 @@ This project uses Docker to manage its environment. To run it locally, follow th
 ### We have already entered the repositories with `pipenv` before, now we will continue with the next one, but you first enter your `Docker Desktop` application if you do not have `Linux` of course:
 1. Create a Docker image by running the command: 
     ```
-    $ docker build -t my_channel .
+    $ docker build -t keepsecret .
     ```
 2. Once the image has been successfully created, start the container: 
     ```
-    $ docker run -p 1212:8000 my_channel
+    $ docker run -p 1212:8000 keepsecret
     ```
 3. Check ``Dockerfile`` if you do not have an image download from ``Docker Hub``:
     ````bash
@@ -139,7 +170,7 @@ Your project should now be available in your browser at `https://localhost:1212/
 4. Click the `Save` button to create your post.
 5. Your post will be displayed on the page:
     ```
-    https://localhost/posts/channel
+    https://localhost/add_posts
     ```
 **You can see them through this path.
 
