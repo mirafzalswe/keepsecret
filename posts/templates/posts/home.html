@@ -5,11 +5,8 @@
 {% endblock title %}
 
 {% block content %}
-
-
-
        <div class="container-homec">
-        {% if form %}
+       {% if form %}
        {% for i in form %}
         <div class="card-home">
             <div class="avatar-side">
@@ -21,7 +18,7 @@
             </div>
             <div class="topic">
                 {% for m in i.hashtags.all  %}
-                    <a href="hashtags/{{ m }}"><p style="color:blue" class="author">{{ m }}</p></a>
+                    <a style="text-decoration: none" href="hashtags/{{ m }}"><p style="color:blue" class="author">{{ m }}</p></a>
                 {% endfor %}
             </div>
             <div class="content-home">
@@ -30,7 +27,7 @@
             <div class="degree">
                 <div class="degree-nav">
                      <div class="comment">
-                         <a href="" style="font-size: 20px"><i class="fa-regular fa-comments"></i></a>
+                         <a href="{% url 'post-detail' i.id %}" style="font-size: 20px"><i class="fa-regular fa-comments"></i></a>
                          <p style="font-size: 20px; margin-bottom: 10px;" class="count"> {{ i.comments.count }}</p>
                      </div>
                     <div class="like-pt">
